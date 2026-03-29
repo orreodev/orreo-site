@@ -1,0 +1,50 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "content/home.json"
+        fields:
+          - { label: "Hero Tagline", name: "hero_tagline", widget: "string", default: "I figure out if something can work. Then I make it real." }
+          - { label: "Intro Text", name: "intro_text", widget: "text" }
+          - { label: "Stat 1 Number", name: "stat1_num", widget: "string", default: "8+" }
+          - { label: "Stat 1 Label", name: "stat1_label", widget: "string", default: "Projects Delivered" }
+          - { label: "Stat 2 Number", name: "stat2_num", widget: "string", default: "$30M+" }
+          - { label: "Stat 2 Label", name: "stat2_label", widget: "string", default: "Total Development" }
+          - { label: "Stat 3 Number", name: "stat3_num", widget: "string", default: "140+" }
+          - { label: "Stat 3 Label", name: "stat3_label", widget: "string", default: "Units Created" }
+
+      - name: "about"
+        label: "About Page"
+        file: "content/about.json"
+        fields:
+          - { label: "Bio Paragraphs", name: "bio", widget: "list", field: { label: "Paragraph", name: "text", widget: "text" } }
+
+      - name: "contact"
+        label: "Contact Info (Footer)"
+        file: "content/contact.json"
+        fields:
+          - { label: "Email", name: "email", widget: "string", default: "info@orreodev.com" }
+          - { label: "Phone", name: "phone", widget: "string", default: "(503) 555-0000" }
+          - { label: "City", name: "city", widget: "string", default: "Salem, Oregon" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Project Name", name: "name", widget: "string" }
+      - { label: "Project Type", name: "type", widget: "select", options: ["Market-Rate Residential", "Affordable / LIHTC", "Commercial Mixed-Use", "Historic Adaptive Reuse", "Land Division"] }
+      - { label: "Detail (e.g. 12 Units · $2.4M)", name: "detail", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Sort Order", name: "order", widget: "number", default: 0 }

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — ORREO</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">ORREO</a>
+    <div class="nav-links">
+      <a href="projects.html">Projects</a>
+      <a href="services.html">Services</a>
+      <a href="about.html" class="active">About</a>
+    </div>
+  </nav>
+
+  <section class="hero short">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1600&q=80');"></div>
+    <div class="hero-overlay" style="background: rgba(44,36,32,0.55);"></div>
+    <div class="hero-content">
+      <div class="label" style="margin-bottom: 12px;">Every Project Starts with a Question Mark</div>
+      <h1 style="color: #fff;">About</h1>
+    </div>
+  </section>
+
+  <section class="section bg-cream">
+    <div class="bio">
+      <p class="reveal">I'm not going to give you the "visionary leader" bio. I don't have a corner office and I don't call myself a mogul. I'm a developer because I like solving problems that come with dirt attached.</p>
+      <p class="reveal">I started ORREO because I saw deals that weren't getting done — not because they were bad, but because nobody wanted to do the work of figuring out if they were good. Risk assessment isn't glamorous. Due diligence isn't sexy. But they're the difference between a building and a bankruptcy.</p>
+      <p class="reveal">My friends say I play Monopoly in real life. I'll take it. The game rewards patience, math, and knowing when to build — not just knowing when to buy. Most people forget that part.</p>
+      <p class="reveal">The projects I take on range from market-rate housing to LIHTC affordable developments, from historic adaptive reuse to straightforward land divisions. They don't all make headlines. They all make sense.</p>
+      <p class="reveal">If you've got an idea and you're not sure if it works, that's exactly where I start.</p>
+    </div>
+  </section>
+
+  <section class="hero short">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1486718448742-163732cd1544?w=1600&q=80');"></div>
+    <div class="hero-overlay" style="background: rgba(44,36,32,0.65);"></div>
+    <div class="hero-content reveal">
+      <div style="max-width: 580px; margin: 0 auto;">
+        <div class="quote-text">"I do a good job at assessing risk and bringing ideas to fruition."</div>
+        <div class="accent-line center"></div>
+        <div class="quote-attr">Literally just what I do</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="brand">ORREO</div>
+        <div class="tagline">I figure out if something can work.<br>Then I make it real.</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <p>info@orreodev.com<br>(503) 555-0000<br>Salem, Oregon</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Credentials</div>
+        <p>ORREO, LLC<br>Oregon CCB #210806<br>OHCS Approved Developer</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ORREO, LLC</span>
+      <span style="font-style: italic;">Every Project Starts with a Question Mark</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

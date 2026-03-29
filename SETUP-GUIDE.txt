@@ -1,0 +1,112 @@
+ORREO Website — Netlify + Decap CMS Setup Guide
+=================================================
+
+This is your complete website with a visual content editor.
+Follow these steps to get it live.
+
+
+STEP 1: Create a GitHub Account (if you don't have one)
+-------------------------------------------------------
+Go to https://github.com and sign up. Free.
+This is where your site files will live.
+
+
+STEP 2: Upload This Folder to GitHub
+-------------------------------------
+1. Log into GitHub
+2. Click the "+" button (top right) > "New repository"
+3. Name it: orreo-site
+4. Keep it Public
+5. Click "Create repository"
+6. On the next page, click "uploading an existing file"
+7. Drag ALL files and folders from this zip into the upload area
+   (make sure the folder structure is preserved — admin/, content/, etc.)
+8. Click "Commit changes"
+
+
+STEP 3: Deploy on Netlify
+--------------------------
+1. Go to https://app.netlify.com and sign up with your GitHub account
+2. Click "Add new site" > "Import an existing project"
+3. Choose GitHub
+4. Select your "orreo-site" repository
+5. Leave all build settings as-is (no build command needed)
+6. Click "Deploy site"
+7. Your site is now live at a random URL like sparkling-fox-123.netlify.app
+
+
+STEP 4: Enable Netlify Identity (required for the CMS)
+-------------------------------------------------------
+This lets you log into the content editor.
+
+1. In your Netlify dashboard, go to your site
+2. Click "Integrations" in the top nav
+3. Search for "Identity" and click "Enable"
+4. Go to Settings > Identity > Registration
+5. Set to "Invite only" (so only you can log in)
+6. Go to Settings > Identity > Services > Git Gateway
+7. Click "Enable Git Gateway"
+8. Go to Identity tab > click "Invite users"
+9. Enter YOUR email address
+10. Check your email for the invite, click the link, set a password
+
+
+STEP 5: Log Into Your Content Editor
+--------------------------------------
+1. Go to: https://your-site-name.netlify.app/admin/
+2. Log in with the email/password you just set up
+3. You'll see the Decap CMS dashboard with:
+   - Pages (Home, About, Contact Info)
+   - Projects (add, edit, delete projects)
+4. Edit content, hit "Publish" — your site updates automatically
+
+
+WHAT YOU CAN EDIT FROM THE CMS:
+- Home page tagline and intro text
+- Stats numbers and labels
+- About page bio paragraphs
+- Contact email, phone, city (updates footer everywhere)
+- Projects: add new ones, edit existing, upload photos, reorder
+
+
+WHAT REQUIRES EDITING HTML:
+- Services page content (rarely changes)
+- Adding entirely new pages
+- Layout/design changes
+- Any structural changes
+
+
+TO CONNECT A CUSTOM DOMAIN:
+1. In Netlify dashboard > Domain settings
+2. Click "Add custom domain"
+3. Enter your domain (e.g., orreodev.com)
+4. Follow Netlify's DNS instructions
+5. Free SSL certificate is automatic
+
+
+FILE STRUCTURE:
+orreo-site/
+├── index.html          (Home page)
+├── projects.html       (Projects page)
+├── services.html       (Services page)
+├── about.html          (About page)
+├── style.css           (All styling)
+├── script.js           (Animations & interactions)
+├── admin/
+│   ├── index.html      (CMS editor interface)
+│   └── config.yml      (CMS configuration)
+├── content/
+│   ├── home.json       (Home page content)
+│   ├── about.json      (About page content)
+│   ├── contact.json    (Footer contact info)
+│   └── projects/       (Individual project files)
+└── images/             (Uploaded images go here)
+
+
+IMPORTANT NOTES:
+- The site is currently using placeholder Unsplash images
+- Replace them with your real project photos
+- The CMS handles image uploads automatically
+- Content changes via the CMS trigger automatic rebuilds
+- Everything is free (Netlify free tier, GitHub free, Decap CMS is open source)
+- Cancel your Squarespace subscription — you don't need it anymore
